@@ -1,0 +1,115 @@
+
+.wrap-parallax-mix{
+	position: relative;
+	background-image: linear-gradient(-230deg, #f77174, #071019);
+	/*background: #071019;*/
+	.decor-top{
+		opacity: 0.9;
+		z-index: 1;
+		position: relative;
+		top: 0;
+		right: 0;
+		left: 0;
+		text-align: right;
+		img{
+			&:nth-child(1){
+				position: absolute;
+				z-index: 1000;
+				width: 220px;
+				right: -18%;
+				margin-top: -5%;
+				transform: rotate(65deg);
+				filter: blur(1px);
+			}
+			&:nth-child(2){
+				position: absolute;
+				width: 193px;
+				right: 10%;
+				margin-top: -22%;
+				transform: rotate(-84deg);
+				filter: blur(2px);
+			}
+		}
+	}
+	.decor-center{
+		z-index: 1;
+		position: absolute;
+		top: 18%;
+		right: -10%;
+		left: 0;
+		text-align: right;
+		opacity: 0.3;
+		img{
+			position: absolute;
+			z-index: 1000;
+			width: 270px;
+			right: -18%;
+			margin-top: -20%;
+			transform: rotate(95deg);
+			filter: blur(3px);
+		}
+	}
+	.decor-bottom{
+		z-index: 1;
+	    position: absolute;
+	    bottom: 10%;
+	    right: 0;
+	    left: 0;
+	    text-align: right;
+	    opacity: 0.3;
+		img{
+			display: block;
+		    width: 270px;
+		    margin-left: -20%;
+		    margin-top: -20%;
+		    transform: rotate(-105deg);
+		    filter: blur(3px);
+		}
+	}
+
+	
+
+	.txt-content{
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.section{
+		position: relative;
+		z-index: 100;
+		height: -webkit-fill-available;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.decor{
+		position: absolute;
+		display: flex;
+		align-items: flex-end;
+		&.decor-left{
+			opacity: 0.7 ;
+			left: -15%;
+			top: 80%;
+			width: 120px;
+			transform: rotate(-45deg);
+			animation-name: init-ani;
+			animation-duration: 1s;
+			
+		}
+		&.decor-right{
+			opacity: 0.8;
+			right: 5%;
+			top: 40%;
+			width: 60px;
+			transform: rotate(35deg);
+			animation-name: init-ani;
+			animation-duration: 1s;
+		}
+	}
+}
+
+@keyframes init-ani {
+    from {opacity: 0; transform: translateY(-150%)}
+    to {opacity: 1; transform: translateY(0) rotate(-45deg);}
+}

@@ -1,0 +1,135 @@
+
+<div class="wrap-profile-v1 offset-top-obj">
+	<div class="">
+		<div class="cover">
+			<img src="assets/images/lemon11.jpg">
+		</div>
+		<ion-row class="wrap-avt">
+			<ion-col text-center size="4">
+				<hr/>
+				<h5 no-margin class="txt1 fw-600">32k</h5>
+				<p no-margin class="txt3 fs-12">Follower</p>
+			</ion-col>
+			<ion-col text-center size="4">
+				<div class="avt mgt--70 shadow-3">
+					<img src="assets/images/avt1.jpg">
+				</div>
+				<hr/>
+				<h3 no-margin class="txt1">Koodinh</h3>
+				<p no-margin class="txt3 fs-12">Designer</p>
+				<hr/>
+				<ion-button color="primary" shape="round" class="">Follow</ion-button>
+			</ion-col>
+			<ion-col text-center size="4">
+				<hr/>
+				<h5 no-margin class="txt1 fw-600">135</h5>
+				<p no-margin class="txt3 fs-12">Following</p>
+			</ion-col>
+		</ion-row>
+	</div>
+	<div class="pdl-50 pdr-50">
+		<br/>
+		<ion-segment mode="md" color="tertiary" [(ngModel)]="profile">
+			<ion-segment-button value="posts">
+				8 posts
+			</ion-segment-button>
+			<ion-segment-button value="photos">
+				10 Photos
+			</ion-segment-button>
+		</ion-segment>
+		<br/>
+	</div>
+	<div padding class="">
+		<div [ngSwitch]="profile">
+		  	<ion-list *ngSwitchCase="'posts'">
+		  		<ion-row>
+		  			<ion-col size="4" class="">
+		  				<div class="bdra-5 thumb mgb-5 shadow-2">
+		  					<img src="assets/images/lemon11.jpg">
+		  				</div>
+		  			</ion-col>
+		  			<ion-col size="4" class="">
+		  				<div class="bdra-5 thumb mgb-5 shadow-2">
+		  					<img src="assets/images/lemon12.jpg">
+		  				</div>
+		  			</ion-col>
+		  			<ion-col size="4" class="">
+		  				<div class="bdra-5 thumb mgb-5 shadow-2">
+		  					<img src="assets/images/lemon13.jpg">
+		  				</div>
+		  			</ion-col>
+		  			<ion-col size="4" class="">
+		  				<div class="bdra-5 thumb mgb-5 shadow-2">
+		  					<img src="assets/images/lemon14.jpg">
+		  				</div>
+		  			</ion-col>
+		  			<ion-col size="4" class="">
+		  				<div class="bdra-5 thumb mgb-5 shadow-2">
+		  					<img src="assets/images/lemon15.jpg">
+		  				</div>
+		  			</ion-col>
+		  			<ion-col size="4" class="">
+		  				<div class="bdra-5 thumb mgb-5 shadow-2">
+		  					<img src="assets/images/lemon16.jpg">
+		  				</div>
+		  			</ion-col>
+		  			<ion-col size="4" class="">
+		  				<div class="bdra-5 thumb mgb-5 shadow-2">
+		  					<img src="assets/images/lemon17.jpg">
+		  				</div>
+		  			</ion-col>
+		  			<ion-col size="4" class="">
+		  				<div class="bdra-5 thumb mgb-5 shadow-2">
+		  					<img src="assets/images/lemon18.jpg">
+		  				</div>
+		  			</ion-col>
+		  		</ion-row>
+			</ion-list>
+
+		  	<ion-list *ngSwitchCase="'photos'">
+		  		<ion-row>
+		  			<ion-col size="6" class="">
+		  				<div class="bdra-5 thumb mgb-5 shadow-2">
+		  					<img src="assets/images/lemon1.png">
+		  				</div>
+		  			</ion-col>
+		  			<ion-col size="6" class="">
+		  				<div class="bdra-5 thumb mgb-5 shadow-2">
+		  					<img src="assets/images/lemon2.png">
+		  				</div>
+		  			</ion-col>
+		  			<ion-col size="6" class="">
+		  				<div class="bdra-5 thumb mgb-5 shadow-2">
+		  					<img src="assets/images/lemon3.png">
+		  				</div>
+		  			</ion-col>
+		  			<ion-col size="6" class="">
+		  				<div class="bdra-5 thumb mgb-5 shadow-2">
+		  					<img src="assets/images/lemon4.png">
+		  				</div>
+		  			</ion-col>
+		  			<ion-col size="6" class="">
+		  				<div class="bdra-5 thumb mgb-5 shadow-2">
+		  					<img src="assets/images/lemon5.png">
+		  				</div>
+		  			</ion-col>
+		  			<ion-col size="6" class="">
+		  				<div class="bdra-5 thumb mgb-5 shadow-2">
+		  					<img src="assets/images/lemon6.png">
+		  				</div>
+		  			</ion-col>
+		  			<ion-col size="6" class="">
+		  				<div class="bdra-5 thumb mgb-5 shadow-2">
+		  					<img src="assets/images/lemon7.png">
+		  				</div>
+		  			</ion-col>
+		  			<ion-col size="6" class="">
+		  				<div class="bdra-5 thumb mgb-5 shadow-2">
+		  					<img src="assets/images/lemon8.png">
+		  				</div>
+		  			</ion-col>
+		  		</ion-row>
+		  	</ion-list>
+		</div>
+	</div>
+</div>

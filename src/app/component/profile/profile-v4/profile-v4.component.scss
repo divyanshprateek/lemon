@@ -1,0 +1,72 @@
+.wrap-profile-v4{
+	.main-info{
+		position: relative;
+		.top-info{
+			position: relative;
+			z-index: 10;
+			display: flex;
+			align-items: center;
+			.wrap-avt{
+				.avt{
+					width: 100px;
+					height: 100px;
+					overflow: hidden;
+					border-radius: 50%;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					img{
+						height: 100%;
+						max-width: unset;
+					}
+				}
+			}
+			.society-info{
+				.relation{
+					>div{
+						display: inline-block;
+					}
+				}
+			}
+			
+		}
+		.more-action{
+			z-index: 100;
+			position: absolute;
+			bottom: 0;
+			right: 0;
+		}
+	}
+	.thumb{
+		height: 25vw;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		overflow: hidden;
+	}
+	.slisde-blog-list-mini{
+		width: 125%;
+		.thumb-slide{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 70px;
+			width: 100%;
+			overflow: hidden;
+			img{
+				width: 100%;
+				max-height: unset;
+			}
+		}
+	}
+	.st-name{
+		display: flex;
+		align-items: center;
+		h2{
+			flex: 1;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+	}
+}

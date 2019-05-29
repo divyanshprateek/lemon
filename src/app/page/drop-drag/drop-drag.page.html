@@ -1,0 +1,15 @@
+
+<ion-header class="parallax-obj parallax-translate-obj header-transparent">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="" icon="ios-arrow-round-back"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{page_name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding fullscreen common-parallax [scrollEvents]="true">
+  	
+	<component-drop-drag *ngIf="page_path == 'drop-drag' "></component-drop-drag>
+
+</ion-content>

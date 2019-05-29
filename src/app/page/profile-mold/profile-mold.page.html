@@ -1,0 +1,19 @@
+
+<ion-header class="parallax-obj parallax-translate-obj header-transparent">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="" icon="ios-arrow-round-back"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{page_name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen common-parallax [scrollEvents]="true">
+  	
+	<component-profile-v1 *ngIf="page_path == 'profile-v1' "></component-profile-v1>
+	<component-profile-v2 *ngIf="page_path == 'profile-v2' "></component-profile-v2>
+	<component-profile-v3 *ngIf="page_path == 'profile-v3' "></component-profile-v3>
+	<component-profile-v4 *ngIf="page_path == 'profile-v4' "></component-profile-v4>
+	<component-profile-v5 *ngIf="page_path == 'profile-v5' "></component-profile-v5>
+
+</ion-content>

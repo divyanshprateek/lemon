@@ -1,0 +1,26 @@
+
+<ion-header class="parallax-obj parallax-translate-obj header-transparent">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="" icon="ios-arrow-round-back"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button class="grey-2 bdra-50 text-black" (click)="removeAll()">
+        <ion-icon name="md-trash"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Unsplash favorite</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen common-parallax [scrollEvents]="true">
+  
+  <div>
+    <div class="wrap-gallery-grid">
+        <div class="element-gallery pd-0 ani-scale" *ngFor="let item of data">
+          <img src="{{item.path}}" alt="" (click)="openModal(item)">
+        </div>
+    </div>
+  </div>
+  
+</ion-content>

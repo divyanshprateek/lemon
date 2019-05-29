@@ -1,0 +1,55 @@
+
+.wrap-parallax-cover{
+	position: relative;
+	.cover{
+		position: relative;
+		z-index: 100;
+		height: 300px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		overflow: hidden;
+		img{
+			z-index: 10;
+			width: 100%;
+		}
+		.txt-cover{
+			z-index: 100;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	}
+
+	.collapse-select{
+		z-index: 10;
+		position: relative;
+		width: 110%;
+		.img-collection{
+			height: 40px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			overflow: hidden;
+			img{
+				width: 100%;
+			}
+		}
+	}
+
+	.main-content{
+		position: relative;
+		z-index: 1000;
+		.avt-thumb{
+			width: 50px;
+			height: 50px;
+			display: flex;
+			align-content: center;
+			justify-content: center;
+			display: inline-block;
+			img{
+				height: 100%;
+			}
+		}
+	}
+}

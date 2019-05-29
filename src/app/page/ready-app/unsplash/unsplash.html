@@ -1,0 +1,50 @@
+
+<ion-header class="parallax-obj parallax-translate-obj header-transparent">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="" icon="ios-arrow-round-back"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/tabs/tab-home/unsplash-collection']">
+        <ion-icon class="fs-20" name="ios-list-box"></ion-icon>
+      </ion-button>
+      <ion-button [routerLink]="['/tabs/tab-home/unsplash-favorite']">
+        <ion-icon class="fs-20" name="heart"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{page_name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen common-parallax [scrollEvents]="true">
+  
+  <div class="pdl-20 pdr-20">
+    <ion-searchbar [(ngModel)]="query" [showCancelButton]="shouldShowCancel" (ionInput)="onInput()" class="light-searchbar round transparent text-white pdl-10 pdr-10"></ion-searchbar>
+  </div>
+
+  <br/>
+
+  <ion-spinner class="indicator block mg-auto" [ngClass]="spnState"></ion-spinner>
+
+  <div *ngIf="query == null || query == '' || query == ' ' ">
+    <div class="wrap-gallery-grid">
+        <div class="element-gallery pd-0 ani-scale" *ngFor="let item of data">
+          <img src="{{item.path}}" alt="" (click)="openModal(item)">
+        </div>
+    </div>
+  </div>
+
+  <div *ngIf="query != '' && query != undefined && query != null && query != ' ' ">
+    <h4 text-center class="fs-15 mg-0 pdl-20 pdr-20">Result of seaching "<b>{{query}}</b>"</h4>
+    <br/>
+    <div class="wrap-gallery-grid">
+        <div class="element-gallery pd-0 ani-scale" *ngFor="let item of data">
+          <img src="{{item.path}}" alt="" (click)="openModal(item)">
+        </div>
+    </div>
+  </div>
+
+  <ion-infinite-scroll (ionInfinite)="loadMore($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

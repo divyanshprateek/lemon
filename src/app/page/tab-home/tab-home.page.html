@@ -1,0 +1,67 @@
+
+<ion-header class="parallax-obj parallax-translate-obj header-transparent">
+  <ion-toolbar>
+    <ion-title>
+      <img class="logo_brand" src="assets/images/lemon_w.png">
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content common-parallax fullscreen [scrollEvents]="true">
+  <div class="wrap-home offset-top-obj">
+    <ion-slides pager="true" [options]="slideOpts" class="">
+      <ion-slide class="">
+        <div class="wrap-view-slide shadow-1">
+          <div class="slogan txt-light pdl-40 pdr-50 pdt-20" text-left>
+            <h2 class="fs-40 overline fw-900 uppercase spacing3">Lemon</h2>
+            <p no-margin class="fs-14">Beautiful and clean design</p>
+            <p no-margin class="fs-14">full component, full skill, Easy installation</p>
+            <p no-margin class="fs-14">built-in firebase</p>
+          </div>
+          <div class="bg-slide">
+            <img class="parallax-obj parallax-up-obj" src="assets/images/lemon2.png">
+          </div>
+        </div>
+      </ion-slide>
+      <ion-slide class="">
+        <div class="wrap-view-slide shadow-1">
+          <div class="slogan txt-light pdl-40 pdr-50 pdt-20" text-left>
+            <h2 class="fs-40 overline fw-900 uppercase spacing3">30% Discount</h2>
+            <p class="fs-16">Discounted the first 100 people</p>
+          </div>
+          <div class="bg-slide">
+            <img class="parallax-obj parallax-up-obj" src="assets/images/lemon4.png">
+          </div>
+        </div>
+      </ion-slide>
+      <ion-slide class="">
+        <div class="wrap-view-slide shadow-1">
+          <div class="slogan txt-light pdl-40 pdr-50 pdt-20" text-left>
+            <h2 class="fs-40 overline fw-900 uppercase spacing3">Lorem Impsum</h2>
+            <p class="fs-16">It was popularised in the 1960s</p>
+          </div>
+          <div class="bg-slide">
+            <img class="parallax-obj parallax-up-obj" src="assets/images/lemon6.png">
+          </div>
+        </div>
+      </ion-slide>
+    </ion-slides>
+
+    <hr/>
+    <hr/>
+
+    <ion-list lines="none" padding-top no-margin padding>
+      <ion-item *ngFor="let item of list_menu, let i = index" [routerLink]="['/tabs/tab-home/'+(!item.child? item.path : 'fragment'), {'index': i}]" class="txt2">
+        <ion-icon name="{{item.icon}}" slot="start" magrin-end></ion-icon>
+        <ion-label>
+          <h2 padding-start>{{item.name}}</h2>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+
+    <br/>
+    <br/>
+
+  </div>
+
+</ion-content>

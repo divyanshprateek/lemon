@@ -1,0 +1,48 @@
+
+<ion-header class="parallax-obj parallax-translate-obj header-transparent">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="" icon="ios-arrow-round-back"></ion-back-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-button size="small" fill="clear" (click)="wpService.doFavorite(favorite_post)" >
+          <ion-icon class="fs-18" [name]="favorite_post.isFavorite == true ? 'heart' : 'heart-empty'"></ion-icon>
+      </ion-button>
+      <ion-button size="small" fill="clear" (click)="wpService.doShare(post)">
+          <ion-icon class="fs-18" name="md-share"></ion-icon>
+      </ion-button>
+      <ion-button size="small" fill="clear" (click)="wpService.doOpen(post)">
+          <ion-icon class="fs-18" name="md-open"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>Detail</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen common-parallax [scrollEvents]="true">
+ <ion-spinner class="indicator mg-auto block" [ngClass]="spnState"></ion-spinner> 
+
+ <div *ngIf="post!=null" padding class="">
+
+      <ion-card-title class="fs-18 fw-600 uppercase card-title card-title-md" [innerHTML]="post.title.rendered"></ion-card-title>
+      <p class="text-grey-4" [innerHTML]="post.content.rendered"></p>
+
+    <ion-row class="row" *ngIf="comments.length!=0">
+    <ion-list class="lst-no-background list list-md">
+      <ion-item *ngFor="let item of comments">
+        <ion-avatar item-start>
+          <img [src]="item.author_avatar_urls['24']">
+        </ion-avatar>
+        <h2>{{item.author_name}}</h2>
+        <p [innerHTML]="item.content.rendered"></p>
+        <ion-note item-end>3:43 pm</ion-note>
+      </ion-item>
+     </ion-list>
+    <ion-button expend="block" shape="round" class="" (click)="loadComment()">
+      Load More
+    </ion-button>
+    </ion-row> 
+  </div>
+</ion-content>

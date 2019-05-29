@@ -1,0 +1,51 @@
+<ion-header class="parallax-obj parallax-translate-obj header-transparent">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="" icon="ios-arrow-round-back"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button class="grey-2 bdra-50 text-black" (click)="doClear()">
+        <ion-icon name="md-trash"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Wordpress favorite</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content fullscreen common-parallax [scrollEvents]="true">
+  <ion-card *ngFor="let item of data" class="bdra-5 card card-md">
+    <img *ngIf="item.thumb!=null" [src]="item.thumb" [routerLink]="['/tabs/tab-home/wordpress-detail', item]">
+    <ion-card-content class="card-content card-content-md" [routerLink]="['/tabs/tab-home/wordpress-detail', item]">
+      <ion-card-title class="fs-16 fw-600 card-title card-title-md" [innerHTML]="item.title"></ion-card-title>
+      <p  [innerHTML]="item.excerpt"></p>
+    </ion-card-content>
+
+    <ion-row class="row">
+      <ion-col>
+        <ion-button (click)="doFavorite(item)" fill="clear" size="small" class="text-grey-5 favorite">
+          <ion-icon  [name]="item.isFavorite == true ? 'heart' : 'heart-empty'"></ion-icon>
+        </ion-button>
+      </ion-col>
+
+      <ion-col center text-center>
+         <ion-button (click)="wpService.doShare(item)" fill="clear" size="small" class="text-grey-5">
+             <ion-icon name="md-share"></ion-icon>
+        </ion-button>
+      </ion-col>
+
+      <ion-col right text-right>
+        <ion-button (click)="wpService.doOpen(item)" fill="clear" size="small" class="text-grey-5">
+          <ion-icon name="md-open"></ion-icon>
+        </ion-button>
+      </ion-col>
+      
+      <ion-col right text-right>
+        <ion-button [routerLink]="['/tabs/tab-home/wordpress-detail', item]" fill="clear" size="small" class="text-grey-5 fs-20">
+          <ion-icon name="ios-more"></ion-icon>
+        </ion-button>
+      </ion-col>
+
+    </ion-row>
+  </ion-card>
+</ion-content>

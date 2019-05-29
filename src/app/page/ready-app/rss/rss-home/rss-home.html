@@ -1,0 +1,50 @@
+<ion-header class="parallax-obj parallax-translate-obj header-transparent">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="" icon="ios-arrow-round-back"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/tabs/tab-home/rss-favorite']">
+        <ion-icon name="heart"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Rss home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content fullscreen common-parallax [scrollEvents]="true">
+   <ion-spinner class="indicator mg-auto block" [ngClass]="spnState"></ion-spinner>
+	<ion-card class="bdra-5 card card-ios" *ngFor="let item of data">
+    <span *ngIf="item['media:content']!=undefined">
+        <img [src]="item['media:content']['$']['url']">
+    </span>
+
+    <ion-card-content class="card-content card-content-ios">
+      <ion-card-title class="fs-18 card-title card-title-ios">{{item.title}}</ion-card-title>
+      <p>{{item.description}}</p>
+    </ion-card-content>
+
+    <ion-row class="row">
+      <ion-col>
+        <ion-button fill="clear" size="small" class="text-black favorite" (click)="rssService.doFavorite(item)">
+          <ion-icon  [name]="item.isFavorite == true ? 'heart' : 'heart-empty'"></ion-icon>
+        </ion-button>
+      </ion-col>
+
+      <ion-col center text-center>
+         <ion-button fill="clear" size="small" class="text-black" (click)="rssService.doShare(item)">
+             <ion-icon name="share"></ion-icon>
+        </ion-button>
+      </ion-col>
+
+      <ion-col right text-right>
+        <ion-button fill="clear" size="small" class="text-black" (click)="rssService.doOpen(item)">
+          <ion-icon name="open"></ion-icon>
+        </ion-button>
+      </ion-col>
+
+    </ion-row>
+  </ion-card>
+
+</ion-content>

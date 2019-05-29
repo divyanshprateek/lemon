@@ -1,0 +1,25 @@
+
+<ion-header class="parallax-obj parallax-translate-obj header-transparent">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="" icon="ios-arrow-round-back"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Youtube-detail</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen common-parallax [scrollEvents]="true">
+  <ion-card class="bdra-5 card-button-pst shadow-3 mgb-30">
+    <img src="{{item.url}}"/>
+    <ion-card-content class="pst-relative">
+
+      <ion-button class="mgt--45 pst-absolute button-circle button-large shadow-2 pink-vs-red text-white" style="float:right" (click)="ytService.play(item.videoId)">
+        <ion-icon class="fs-20" name="ios-play"></ion-icon>
+      </ion-button>
+
+      <ion-card-title class="fs-20 fw-600 text-center mgt-25">{{item.title}}</ion-card-title>
+        <p class="text-grey fs-14 text-center">{{item.publishedAt | timeAgoIso_8061}}</p>
+      <p class="text-center mgb-20">{{item.description}}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

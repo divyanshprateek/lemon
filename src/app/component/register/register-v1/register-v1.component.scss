@@ -1,0 +1,21 @@
+
+.wrap-register-v1{
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	.wrap-interval{
+		width: 100%;
+	}
+	.brand{
+		text-align: center;
+		img{
+			margin: 0px auto;
+			height: 90px;
+		}
+	}
+}
+
+ion-radio{
+	margin-right: 0;
+}

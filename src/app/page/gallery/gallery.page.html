@@ -1,0 +1,18 @@
+
+<ion-header class="parallax-obj parallax-translate-obj header-transparent">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="" icon="ios-arrow-round-back"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{page_name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen common-parallax [scrollEvents]="true">
+  	
+	<component-gallery-grid *ngIf="page_path == 'gallery-grid' "></component-gallery-grid>
+	<component-gallery-masonry *ngIf="page_path == 'gallery-masonry' "></component-gallery-masonry>
+	<component-gallery-list *ngIf="page_path == 'gallery-list' "></component-gallery-list>
+	<component-gallery-info *ngIf="page_path == 'gallery-info' "></component-gallery-info>
+
+</ion-content>

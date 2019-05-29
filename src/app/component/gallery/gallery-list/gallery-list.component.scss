@@ -1,0 +1,32 @@
+
+.wrap-gallery-list{
+	.top-slide{
+		width: 135%;
+		ion-slide{
+			.wrap-slide{
+				overflow: hidden;
+				.view-thumb{
+					height: 26vw;
+					overflow: hidden;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					img{
+
+					}
+				}
+			}
+		}
+	}
+	.thumb{
+		height: 20vw;
+		overflow: hidden;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.info{
+		display: flex;
+		align-items: center;
+	}
+}

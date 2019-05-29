@@ -1,0 +1,31 @@
+
+<ion-header class="parallax-obj parallax-translate-obj header-transparent">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="" icon="ios-arrow-round-back"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Unsplash categories collection</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen common-parallax [scrollEvents]="true">
+
+	<ion-spinner class="indicator mg-auto block" [ngClass]="spnState"></ion-spinner>
+
+  <div *ngFor="let item of list">
+  	<ion-card class="card-img-bg bdra-5 card card-md" [routerLink]="['/tabs/tab-home/unsplash-category-detail', {id:item.id, collection_name:item.title}]">
+  		<img  *ngIf="item.preview_photos[0]" [src]="item.preview_photos[0].urls.regular">
+  		<img  *ngIf="item.preview_photos.length==0" src="assets/img/bg-material.jpg">
+    </ion-card>
+    <div class="txt-info pdl-15 pdr-15 pdb-30">
+      <div text-center [routerLink]="['/tabs/tab-home/unsplash-category-detail', {id:item.id, collection_name:item.title}]">
+        <div class="card-title fs-13 fw-600 uppercase">{{item.title}}</div>
+        <div class="card-subtitle fs-13">{{item.total_photos}} photos</div>
+      </div>
+    </div>
+  </div>
+
+   <ion-infinite-scroll (ionInfinite)="loadMore($event)">
+     <ion-infinite-scroll-content></ion-infinite-scroll-content>
+   </ion-infinite-scroll>
+</ion-content>

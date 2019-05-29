@@ -1,0 +1,25 @@
+<ion-header class="parallax-obj parallax-translate-obj header-transparent">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="" icon="ios-arrow-round-back"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{collection_name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen common-parallax [scrollEvents]="true">
+
+  <ion-spinner class="indicator" [ngClass]="spnState"></ion-spinner>
+
+  <div>
+    <div class="wrap-gallery-grid">
+        <div class="element-gallery pd-0 ani-scale" *ngFor="let item of data">
+          <img src="{{item.path}}" alt="" (click)="openModal(item)">
+        </div>
+    </div>
+  </div>
+   
+   <ion-infinite-scroll (ionInfinite)="loadMore($event)">
+     <ion-infinite-scroll-content></ion-infinite-scroll-content>
+   </ion-infinite-scroll>
+</ion-content>

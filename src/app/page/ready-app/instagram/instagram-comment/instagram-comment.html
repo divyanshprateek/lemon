@@ -1,0 +1,24 @@
+
+<ion-header class="parallax-obj parallax-translate-obj header-transparent">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="" icon="ios-arrow-round-back"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Instagram-comment</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen common-parallax [scrollEvents]="true">
+  <ion-spinner class="indicator" [ngClass]="spnState"></ion-spinner>
+  <ion-list>
+  <ion-item *ngFor="let item of list">
+    <ion-avatar item-start>
+      <img src="{{item.from.profile_picture}}">
+    </ion-avatar>
+    <div class="flex-1 mgl-10 pdb-15 pdt-15">
+      <h2 class="mg-0 fs-14 fw-600">{{item.from.username}}</h2>
+      <p class="mg-0 fs-12">{{item.text}}</p>
+    </div>
+  </ion-item>
+ </ion-list>
+</ion-content>

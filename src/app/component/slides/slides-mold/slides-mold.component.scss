@@ -1,0 +1,176 @@
+
+.slide-slogan{
+	.elmt-slide{
+		position: relative;
+		width: 100%;
+		height: 300px;
+		overflow: hidden;
+		display: flex;
+		align-items: center;
+		.slogan{
+			position: relative;
+			z-index: 100;
+		}
+		.bg-img{
+			position: absolute;
+			z-index: 10;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			overflow: hidden;
+			img{
+				min-height: 100%;
+			}
+		}
+	}
+}
+
+
+.slide-perview{
+	width: 130%;
+	.elmt-slide{
+		position: relative;
+		width: 100%;
+		overflow: hidden;
+		.thumb-img{
+			height: 100px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			overflow: hidden;
+			img{
+				min-height: 100%;
+			}
+		}
+	}
+}
+
+
+.slide-thumb{
+	width: 100%;
+	.elmt-slide{
+		position: relative;
+		width: 100%;
+		display: flex;
+		overflow: hidden;
+		align-items: center;
+		.thumb-img{
+			flex: 1;
+			height: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			overflow: hidden;
+			img{
+				min-height: 100%;
+			}
+		}
+		.main-txt{
+			flex: 2;
+			overflow: hidden;
+		}
+	}
+}
+
+
+.slide-thin{
+	width: 125%;
+	.elmt-slide{
+		position: relative;
+		width: 100%;
+		overflow: hidden;
+		.thumb-img{
+			height: 260px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			overflow: hidden;
+			img{
+				height: 100%;
+				max-width: unset !important;
+			}
+		}
+	}
+}
+
+
+.slide-freedom{
+	width: 200%;
+	margin-left: -50%;
+	.elmt-slide{
+		position: relative;
+		width: 100%;
+		overflow: hidden;
+		.thumb-img{
+			height: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			overflow: hidden;
+			img{
+				min-height: 100%;
+			}
+		}
+	}
+}
+
+
+.slide-center{
+	width: 200%;
+	margin-left: 25%;
+	.swiper-slide-active{
+		.elmt-slide{
+			.thumb-img{
+				margin-top: -25px;
+				height: 300px;
+			}
+		}
+	}
+	.elmt-slide{
+		position: relative;
+		width: 100%;
+		.thumb-img{
+			transition: 0.3s;
+			height: 250px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			overflow: hidden;
+			img{
+				min-height: 100%;
+			}
+		}
+	}
+}
+
+
+.slide-side{
+	width: 140%;
+	.swiper-slide-active{
+		.elmt-slide{
+			.thumb-img{
+				margin-top: -25px;
+				height: 200px;
+			}
+		}
+	}
+	.elmt-slide{
+		position: relative;
+		width: 100%;
+		.thumb-img{
+			transition: 0.3s;
+			height: 150px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			overflow: hidden;
+			img{
+				min-height: 100%;
+			}
+		}
+	}
+}

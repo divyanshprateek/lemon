@@ -1,0 +1,77 @@
+
+.wrap-notfound{
+	height: 100%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	.txt-content{
+		z-index: 100;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		overflow: hidden;
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		.numb-content{
+			flex: 1.7;
+			display: flex;
+			align-items: flex-end;
+			justify-content: center;
+			.numb{
+				display: inline-block;
+				margin: 0px 3px;
+				position: relative;
+				.decor{
+					position: absolute;
+					bottom: 0;
+					left: -70%;
+					height: 300px;
+
+					animation-name: top-to-bottom;
+				    animation-duration: 3s;
+				    animation-iteration-count: infinite;
+				    animation-direction: alternate;
+					img{
+						height: 100%;
+						max-width: unset !important;
+						transform: rotate(15deg);
+						display: unset !important;
+					}
+				}
+				.numb-ani{
+					animation-name: shaking;
+				    animation-duration: 2s;
+				    animation-iteration-count: infinite;
+				    animation-direction: alternate;
+				    animation-delay: 1s;
+				}
+			}
+		}
+		.txt-main{
+			flex: 1;
+		}
+	}
+	.bg-img{
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		z-index: 10;
+	}
+}
+
+
+@keyframes top-to-bottom {
+    0%   {transform: translateY(-15px);}
+    100% {transform: translateY(15px);}
+}
+
+@keyframes shaking {
+    0%   {transform: rotate(-10deg) translateY(-2px) translateX(-2px);}
+    100%  {transform: rotate(-5deg) translateY(-10px) translateX(2px);}
+}

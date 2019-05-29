@@ -1,0 +1,25 @@
+
+
+<ion-header class="parallax-obj parallax-translate-obj header-transparent">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="" icon="ios-arrow-round-back"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/tabs/tab-home/rss-favorite']">
+        <ion-icon name="heart"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{page_name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen common-parallax [scrollEvents]="true">
+  <ion-list class="lst-no-background">
+    <ion-item  *ngFor="let item of list_category">
+        <ion-button [routerLink]="['/tabs/tab-home/rss-home', item]" class="fs-15">
+         {{item.title}}
+        </ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>

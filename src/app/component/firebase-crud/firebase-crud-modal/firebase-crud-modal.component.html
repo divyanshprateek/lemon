@@ -1,0 +1,38 @@
+<ion-content class="">
+	<div padding class="wrap-crud-modal bg-light">
+		<br/>
+		
+		<ion-button (click)="dismiss()" fill="solid" size="small" color="dark" type="submit">
+			<ion-icon name="close"></ion-icon>
+		</ion-button>
+
+		<br/>
+		<br/>
+
+		<h2 text-center class="spacing1 fw-900">Note Form</h2>
+		
+		<br/>
+
+		<form class="pdl-50 pdr-50" [formGroup]="crudForm" (submit)="saveCrud(crudForm.value)" novalidate>
+
+			<p class="uppercase spacing">Title</p>
+			<ion-item lines="none" class="bdra-30 shadow-1">
+				<ion-input formControlName="title" type="text" placeholder="title"></ion-input>
+			</ion-item>
+
+			<br/>
+
+			<p class="uppercase spacing">Content</p>
+			<ion-item lines="none" class="bdra-30 shadow-1">
+				<ion-textarea formControlName="content" type="text" placeholder="Content"></ion-textarea>
+			</ion-item>
+
+			<hr/>
+			<hr/>
+
+			<ion-button shape="round" expand="block" fill="solid" color="primary" class="uppercase spacing1 fw-600 fs-12" type="submit">
+				Save note
+			</ion-button>
+		</form>
+	</div>
+</ion-content>

@@ -1,0 +1,66 @@
+<ion-header class="parallax-obj parallax-translate-obj header-transparent">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="" icon="ios-arrow-round-back"></ion-back-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/tabs/tab-home/wordpress-category']">
+        <ion-icon class="fs-20" name="ios-list-box"></ion-icon>
+      </ion-button>
+      <ion-button [routerLink]="['/tabs/tab-home/wordpress-favorite']">
+        <ion-icon class="fs-20" name="heart"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>{{page_name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen common-parallax [scrollEvents]="true">
+	
+	<div class="pdl-20 pdr-20">
+	    <ion-searchbar [(ngModel)]="query" [showCancelButton]="shouldShowCancel" (ionInput)="onInput()" class="light-searchbar round transparent text-white pdl-10 pdr-10"></ion-searchbar>
+	</div>
+
+	<ion-spinner class="indicator" [ngClass]="spnState"></ion-spinner>
+
+ 	<ion-card *ngFor="let item of data" class="bdra-5 card card-md">
+    	<img *ngIf="item.thumb!=null" [src]="item.thumb" [routerLink]="['/tabs/tab-home/wordpress-detail', item]">
+    	<ion-card-content class="card-content card-content-md" [routerLink]="['/tabs/tab-home/wordpress-detail', item]">
+      		<ion-card-title class="fs-16 fw-600 card-title card-title-md" [innerHTML]="item.title"></ion-card-title>
+      		<p class="fs-13" [innerHTML]="item.excerpt"></p>
+    	</ion-card-content>
+
+    	<ion-row class="row">
+      		<ion-col>
+        		<ion-button fill="clear" size="small" (click)="wpService.doFavorite(item)" class="text-black favorite">
+          			<ion-icon [name]="item.isFavorite == true ? 'heart' : 'heart-empty'"></ion-icon>
+        		</ion-button>
+      		</ion-col>
+
+		    <ion-col center text-center>
+		        <ion-button fill="clear" size="small" (click)="wpService.doShare(item)" class="text-black">
+		            <ion-icon name="md-share"></ion-icon>
+		        </ion-button>
+		    </ion-col>
+
+		    <ion-col right text-right>
+		        <ion-button fill="clear" size="small" (click)="wpService.doOpen(item)" class="text-black">
+		        	<ion-icon name="md-open"></ion-icon>
+		        </ion-button>
+		    </ion-col>
+      
+		    <ion-col right text-right>
+		        <ion-button fill="clear" size="small" [routerLink]="['/tabs/tab-home/wordpress-detail', item]" class="text-black">
+		        	<ion-icon name="ios-more"></ion-icon>
+		        </ion-button>
+		    </ion-col>
+
+    	</ion-row>
+  	</ion-card>
+
+   <ion-infinite-scroll (ionInfinite)="loadMore($event)">
+     <ion-infinite-scroll-content></ion-infinite-scroll-content>
+   </ion-infinite-scroll>
+</ion-content>

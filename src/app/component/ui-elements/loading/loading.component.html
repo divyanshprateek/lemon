@@ -1,0 +1,30 @@
+
+<ion-button id="basic" expand="block" (click)="toPresentLoading()">Show Loading</ion-button>
+
+<ion-button id="default" expand="block" (click)="toPresentLoadingWithOptions({duration: 2000, message: 'Please wait...'})">Show Default Loading</ion-button>
+
+<ion-button expand="block" (click)="toPresentLoadingWithOptions({duration: 2000, message: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea voluptatibus quibusdam eum nihil optio, ullam accusamus magni, nobis suscipit reprehenderit, sequi quam amet impedit. Accusamus dolorem voluptates laborum dolor obcaecati.'})">Show Loading with long content</ion-button>
+
+<ion-button expand="block" (click)="toPresentLoadingWithOptions({duration: 5000, message: 'Please wait...', translucent: true})">Show Loading with translucent</ion-button>
+
+
+<ion-button expand="block" (click)="toPresentLoadingWithOptions({duration: 2000, message: 'Please wait...', spinner: false})">Show Loading with no spinner</ion-button>
+
+<ion-button expand="block" (click)="toPresentLoadingWithOptions({duration: 5000, message: 'Please wait...', spinner: 'lines'})">Show Loading with Spinner lines</ion-button>
+
+<ion-button expand="block" (click)="toPresentLoadingWithOptions({duration: 5000, message: 'Please wait...', spinner: 'lines-samll'})">Show Loading with Spinner lines-samll</ion-button>
+
+<ion-button expand="block" (click)="toPresentLoadingWithOptions({duration: 5000, message: 'Please wait...', spinner: 'dots'})">Show Loading with Spinner dots</ion-button>
+
+<ion-button expand="block" (click)="toPresentLoadingWithOptions({duration: 5000, message: 'Please wait...', spinner: 'bubbles'})">Show Loading with Spinner bubbles</ion-button>
+
+<ion-button expand="block" (click)="toPresentLoadingWithOptions({duration: 5000, message: 'Please wait...', spinner: 'circles'})">Show Loading with Spinner circles</ion-button>
+
+<ion-button expand="block" (click)="toPresentLoadingWithOptions({duration: 5000, message: 'Please wait...', spinner: 'crescent'})">Show Loading with Spinner crescent</ion-button>
+
+
+
+<ion-button expand="block" (click)="toPresentLoadingWithOptions({duration: 5000, message: 'Please wait...', translucent: true, cssClass: 'custom-class custom-loading'})">Show Loading with cssClass</ion-button>
+
+
+<ion-loading-controller></ion-loading-controller>

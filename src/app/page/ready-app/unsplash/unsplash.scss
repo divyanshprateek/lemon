@@ -1,0 +1,16 @@
+.wrap-gallery-grid{
+	.element-gallery{
+		width: 25%;
+		height: 25vw;
+		background: var(--ion-bacground);
+		overflow: hidden;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		float: left;
+		img{
+			min-height: 100%;
+			width: auto;
+		}
+	}
+}

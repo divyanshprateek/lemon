@@ -1,0 +1,35 @@
+
+<ion-header class="parallax-obj parallax-translate-obj header-transparent">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="" icon="ios-arrow-round-back"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{page_name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding fullscreen common-parallax [scrollEvents]="true">
+  	
+	<component-action-sheet *ngIf="page_path == 'action-sheet' "></component-action-sheet>
+	<component-alert *ngIf="page_path == 'alert' "></component-alert>
+	<component-badge *ngIf="page_path == 'badge' "></component-badge>
+	<component-button *ngIf="page_path == 'button' "></component-button>
+	<component-card *ngIf="page_path == 'card' "></component-card>
+	<component-checkbox *ngIf="page_path == 'checkbox' "></component-checkbox>
+	<component-date-time *ngIf="page_path == 'date-time' "></component-date-time>
+	<component-fab *ngIf="page_path == 'fab' "></component-fab>
+	<component-infinite-scroll *ngIf="page_path == 'infinite-scroll' "></component-infinite-scroll>
+	<component-input *ngIf="page_path == 'input' "></component-input>
+	<component-list *ngIf="page_path == 'list' "></component-list>
+	<component-loading *ngIf="page_path == 'loading' "></component-loading>
+	<component-modal *ngIf="page_path == 'modal' "></component-modal>
+	<component-range *ngIf="page_path == 'range' "></component-range>
+	<component-refresher *ngIf="page_path == 'refresher' "></component-refresher>
+	<component-searchbar *ngIf="page_path == 'searchbar' "></component-searchbar>
+	<component-segment *ngIf="page_path == 'segment' "></component-segment>
+	<component-select *ngIf="page_path == 'select' "></component-select>
+	<component-spinner *ngIf="page_path == 'spinner' "></component-spinner>
+	<component-tabs *ngIf="page_path == 'tabs' "></component-tabs>
+	<component-toast *ngIf="page_path == 'toast' "></component-toast>
+
+</ion-content>

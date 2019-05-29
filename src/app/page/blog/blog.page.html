@@ -1,0 +1,17 @@
+
+<ion-header class="parallax-obj parallax-translate-obj header-transparent">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="" icon="ios-arrow-round-back"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{page_name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen common-parallax [scrollEvents]="true">
+  	
+	<component-blog-post *ngIf="page_path == 'blog-post' "></component-blog-post>
+	<component-blog-timeline *ngIf="page_path == 'blog-timeline' "></component-blog-timeline>
+	<component-blog-list *ngIf="page_path == 'blog-list' "></component-blog-list>
+
+</ion-content>

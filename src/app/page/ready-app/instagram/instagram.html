@@ -1,0 +1,67 @@
+
+<ion-header class="parallax-obj parallax-translate-obj header-transparent">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="" icon="ios-arrow-round-back"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{page_name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content fullscreen common-parallax [scrollEvents]="true">
+  <ion-spinner class="indicator block mg-auto" [ngClass]="spnState"></ion-spinner>
+  <ion-card class="bdra-5" *ngFor="let item of list">
+    <ion-item>
+      <ion-avatar item-start class="mgt-6 mgb-6">
+        <img src="{{item.user.profile_picture}}">
+      </ion-avatar>
+      <div class="flex-1 mgl-10">
+        <h2 class="mg-0 fs-14 fw-600 text-grey-5">{{item.user.username}}</h2>
+        <p class="mg-0 fs-10 text-grey-3">{{item.user.full_name}}</p>
+      </div>
+      <p *ngIf="item.caption!=null" class="fs-10 text-white">{{item.caption.created_time}}</p> 
+    </ion-item>
+
+    <img src="{{item.images.standard_resolution.url}}">
+
+    <ion-card-content>
+      <p *ngIf="item.caption!=null">{{item.caption.text}}</p>
+    </ion-card-content>
+
+    <ion-row>
+      <ion-col>
+        <ion-button fill="clear" size="small" class="text-black favorite">
+          <ion-icon name="heart"></ion-icon>
+          <div>{{item.likes.count}}</div>
+        </ion-button>
+      </ion-col>
+
+      <ion-col center text-center>
+         <ion-button fill="clear" size="small" class="text-black" [routerLink]="['/tabs/tab-home/instagram-comment', item]">
+             <ion-icon name="chatbubbles"></ion-icon>
+             <div>{{item.comments.count}}</div>
+        </ion-button>
+      </ion-col>
+
+      <ion-col right text-right>
+        <ion-button fill="clear" size="small" class="text-black" (click)="isService.doOpen(item)">
+          <ion-icon name="open"></ion-icon>
+        </ion-button>
+      </ion-col>
+      
+      <ion-col right text-right>
+        <ion-button fill="clear" size="small" class="text-black" (click)="isService.doShare(item)">
+          <ion-icon name="share"></ion-icon>
+        </ion-button>
+      </ion-col>
+
+    </ion-row>
+  </ion-card>
+
+
+  <ion-infinite-scroll (ionInfinite)="loadMore($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+</ion-content>

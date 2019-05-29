@@ -1,0 +1,21 @@
+
+.wrap-crud{
+	min-height: 100%;
+	position: relative;
+	.add-btn-fixed{
+		position: fixed;
+		bottom: 20px;
+		right: 15px;
+	}
+	.element-crud{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		overflow: hidden;
+		width: 100%;
+		.excerpt{
+			overflow: hidden;
+			flex: 100;
+		}	
+	}
+}

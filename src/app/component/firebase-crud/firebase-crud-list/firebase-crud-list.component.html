@@ -1,0 +1,30 @@
+
+<div padding class="wrap-crud bg-light">
+	
+	<ion-button expad="round" color="primary" size="small" class="add-btn-fixed" (click)="openModal()">
+		<ion-icon slot="icon-only" name="ios-add"></ion-icon>
+	</ion-button>
+
+	<div class="pdr-40">
+		<h2 class="fw-900 fs-30 spacing1">Note</h2>
+		<p no-margin class="txt3 fs-14">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+	</div>
+
+	<br/>
+
+	<div class="shadow-2 bdra-5 mgb-15 bg-white" *ngFor="let item of data_list; let i = index">
+		<div class="element-crud">
+			<ion-button size="small" fill="clear" class="txt3" (click)="dellTask(item.payload.doc.id)">
+				<ion-icon name="ios-close"></ion-icon>
+			</ion-button>
+			<div class="excerpt pdt-15 pdb-15">
+				<h4 no-margin class="fs-14 mgb-5 uppercase spacing1 ellipsis txt1">{{item.payload.doc.data().title}}</h4>
+				<p no-margin class="fs-12 ellipsis txt3">{{item.payload.doc.data().content}}</p>
+			</div>
+			<ion-button size="small" fill="clear" class="txt2" (click)="openModal(item)">
+				<ion-icon name="open"></ion-icon>
+			</ion-button>
+		</div>
+	</div>
+
+</div>

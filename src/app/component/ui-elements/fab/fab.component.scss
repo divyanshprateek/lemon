@@ -1,0 +1,11 @@
+
+p {
+  display: block;
+  margin: 15px auto;
+  max-width: 150px;
+  height: 150px;
+  background: blue;
+}
+p:last-of-type {
+  background: yellow;
+}

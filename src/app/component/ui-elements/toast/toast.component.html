@@ -1,0 +1,40 @@
+
+
+<ion-button expand="block" id="showBottomToast" (click)="presentToast('bottom')">Show Toast Bottom</ion-button>
+<ion-button expand="block" (click)="toPresentToast('top')">Show Toast Top</ion-button>
+<ion-button expand="block" (click)="toPresentToast('middle')">Show Toast Middle</ion-button>
+<ion-button expand="block" (click)="toPresentToastWithOptions({message: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea voluptatibus quibusdam eum nihil optio, ullam accusamus magni, nobis suscipit reprehenderit, sequi quam amet impedit. Accusamus dolorem voluptates laborum dolor obcaecati.', duration: 2000})">Show Toast with long message</ion-button>
+<ion-button expand="block" (click)="toPresentToastWithOptions({message: 'click to close', showCloseButton: true})">Show Toast with Close Button</ion-button>
+<ion-button expand="block" (click)="toPresentToastWithOptions({message: 'click to close', showCloseButton: true, closeButtonText: 'closing time'})">Show Toast with Custom Close Button Text</ion-button>
+<ion-button expand="block" (click)="toPresentToastWithOptions({message: 'click to close', showCloseButton: true, translucent: true})">Show Translucent Toast</ion-button>
+
+<ion-toast-controller></ion-toast-controller>
+
+<ion-grid>
+  <ion-row>
+    <ion-col size="6">
+      <P class="red"></P>
+    </ion-col>
+    <ion-col size="6">
+      <P class="green"></P>
+    </ion-col>
+    <ion-col size="6">
+      <P class="blue"></P>
+    </ion-col>
+    <ion-col size="6">
+      <P class="yellow"></P>
+    </ion-col>
+    <ion-col size="6">
+      <P class="pink"></P>
+    </ion-col>
+    <ion-col size="6">
+      <P class="purple"></P>
+    </ion-col>
+    <ion-col size="6">
+      <P class="black"></P>
+    </ion-col>
+    <ion-col size="6">
+      <P class="orange"><P>
+    </ion-col>
+  </ion-row>
+</ion-grid>

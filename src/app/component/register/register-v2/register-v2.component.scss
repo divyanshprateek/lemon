@@ -1,0 +1,25 @@
+
+.wrap-register-v2{
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	.wrap-interval{
+		width: 100%;
+	}
+	.brand{
+		overflow: auto;
+		img{
+			float: left;
+			height: 32px;
+		}
+		ion-button{
+			float: right;
+		}
+	}
+}
+
+ion-button{
+	--padding-start: 7px;
+	--padding-end: 7px;
+}

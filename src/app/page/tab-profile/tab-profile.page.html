@@ -1,0 +1,188 @@
+<ion-header class="parallax-obj parallax-translate-obj header-transparent">
+	<ion-toolbar>
+		<ion-title class="txt-light">
+			Profile
+		</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content common-parallax fullscreen [scrollEvents]="true">
+
+	<div class="wrap-cover parallax-obj">
+		<div class="bg-profile shadow-4">
+			<img class="parallax-obj parallax-up-obj parallax-blur-obj" src="assets/images/lemon11.jpg">
+		</div>
+	</div>
+	<div class="wrap-avatar">
+		<div class="action-btn">
+			<ion-button shape="round" fill="clear" class="e2eShowPopover" (click)="toPresentPopover({ component: 'profile-page', event: event })">
+				<ion-icon name="more"></ion-icon>
+			</ion-button>
+		</div>
+		<div class="avt-image circle">
+			<img src="assets/images/avt2.jpg">
+		</div>
+		<div class="action-btn">
+			<ion-button shape="round" fill="clear" class="" (click)="logout()">
+				<ion-icon name="log-out"></ion-icon>
+			</ion-button>
+		</div>
+	</div>
+
+
+
+
+
+
+	<div padding class="">
+
+		<div class="info" text-center>
+			<h2 class="fw-600 fs-26" no-margin>Koodinh</h2>
+			<p class="txt4" no-margin>Designer / Development</p>
+		</div>
+
+
+		<div class="pdt-20">
+			<ion-row>
+				<ion-col text-center>
+					<h5 no-margin class="fs-14 txt4 fw-400">Liked</h5>
+					<p no-margin class="txt3 fs-18 fw-600">2,5K</p>
+				</ion-col>
+				<ion-col text-center>
+					<h5 no-margin class="fs-14 txt4 fw-400">Posted</h5>
+					<p no-margin class="txt3 fs-18 fw-600">87</p>
+				</ion-col>
+				<ion-col text-center>
+					<h5 no-margin class="fs-14 txt4 fw-400">Follower</h5>
+					<p no-margin class="txt3 fs-18 fw-600">200</p>
+				</ion-col>
+			</ion-row>
+			<p text-center class="txt4 pd-20 pdt-10">The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc</p>
+		</div>
+
+
+		<div class="">
+			<div class="st-name">
+				<h2 no-margin class="uppercase fs-12">Collections</h2>
+				<ion-button class="fs-16 txt4" size="small" fill="clear">
+					<ion-icon slot="icon-only" name="ios-arrow-round-forward"></ion-icon>
+				</ion-button>
+			</div>
+
+			<div class="wrap-slides-profile">
+				<ion-slides pager="false" [options]="slideProfileOpts">
+					<ion-slide>
+						<div class="wrap-collection">
+							<div class="img-collection shadow-3 bdra-5">
+								<img src="assets/images/lemon1.png">
+							</div>
+							<div class="name-collection">
+								<h4 class="fs-12 txt-light">lorem Impsum</h4>
+							</div>
+						</div>
+					</ion-slide>
+					<ion-slide>
+						<div class="wrap-collection">
+							<div class="img-collection shadow-3 bdra-5">
+								<img src="assets/images/lemon2.png">
+							</div>
+							<div class="name-collection">
+								<h4 class="fs-12 txt-light">lorem Impsum</h4>
+							</div>
+						</div>
+					</ion-slide>
+					<ion-slide>
+						<div class="wrap-collection">
+							<div class="img-collection shadow-3 bdra-5">
+								<img src="assets/images/lemon4.png">
+							</div>
+							<div class="name-collection">
+								<h4 class="fs-12 txt-light">lorem Impsum</h4>
+							</div>
+						</div>
+					</ion-slide>
+				</ion-slides>
+			</div>
+		</div>
+
+		<div class="pdt-15">
+			<div class="st-name">
+				<h2 no-margin class="uppercase fs-12">Posted</h2>
+				<ion-button class="fs-16 txt4" size="small" fill="clear">
+					<ion-icon slot="icon-only" name="ios-arrow-round-forward"></ion-icon>
+				</ion-button>
+			</div>
+
+			<div class="wrapper-masonry wrap-posted">
+				<ion-row>
+					<ion-col>
+						<div class="element-gallery pdt-2">
+							<img src="assets/images/lemon20.jpg">
+						</div>
+						<div class="element-gallery pdt-2">
+							<img src="assets/images/lemon1.png">
+						</div>
+						<div class="element-gallery pdt-2">
+							<img src="assets/images/lemon11.jpg">
+						</div>
+						<div class="element-gallery pdt-2">
+							<img src="assets/images/lemon2.png">
+						</div>
+						<div class="element-gallery pdt-2">
+							<img src="assets/images/lemon12.jpg">
+						</div>
+						<div class="element-gallery pdt-2">
+							<img src="assets/images/lemon13.jpg">
+						</div>
+						<div class="element-gallery pdt-2">
+							<img src="assets/images/lemon15.jpg">
+						</div>
+					</ion-col>
+					<ion-col>
+						<div class="element-gallery pdt-2">
+							<img src="assets/images/lemon18.jpg">
+						</div>
+						<div class="element-gallery pdt-2">
+							<img src="assets/images/lemon19.jpg">
+						</div>
+						<div class="element-gallery pdt-2">
+							<img src="assets/images/lemon3.png">
+						</div>
+						<div class="element-gallery pdt-2">
+							<img src="assets/images/lemon4.png">
+						</div>
+						<div class="element-gallery pdt-2">
+							<img src="assets/images/lemon14.jpg">
+						</div>
+						<div class="element-gallery pdt-2">
+							<img src="assets/images/lemon5.png">
+						</div>
+					</ion-col>
+					<ion-col>
+						<div class="element-gallery pdt-2">
+							<img src="assets/images/lemon6.png">
+						</div>
+						<div class="element-gallery pdt-2">
+							<img src="assets/images/lemon16.jpg">
+						</div>
+						<div class="element-gallery pdt-2">
+							<img src="assets/images/lemon17.jpg">
+						</div>
+						<div class="element-gallery pdt-2">
+							<img src="assets/images/lemon7.png">
+						</div>
+						<div class="element-gallery pdt-2">
+							<img src="assets/images/lemon8.png">
+						</div>
+						<div class="element-gallery pdt-2">
+							<img src="assets/images/lemon20.jpg">
+						</div>
+					</ion-col>
+				</ion-row>
+			</div>
+		</div>
+
+	</div>
+
+
+</ion-content>

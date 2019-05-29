@@ -1,0 +1,8 @@
+.card-img-bg{
+	position: relative;
+	.txt-info{
+		z-index: 100;
+		background: rgba(0,0,0,0.5);
+		position: absolute;
+	}
+}

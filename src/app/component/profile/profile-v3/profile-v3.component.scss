@@ -1,0 +1,99 @@
+.wrap-profile-v3{
+	.cover{
+		position: relative;
+		z-index: 10;
+		height: 350px;
+		width: 100%;
+		overflow: hidden;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		.wrap-cover{
+			height: 100%;
+			width: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			img{
+				width: 100%;
+	   			max-height: auto;
+	   			min-height: 100%;
+			}
+		}
+		.info{
+			z-index: 100;
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-end;
+			.wrap-avt{
+				position: relative;
+				z-index: 100;
+				display: flex;
+				align-items: center;
+				.avt{
+					width: 80px;
+					height: 80px;
+					border-radius: 50%;
+					overflow: hidden;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					img{
+						height: 100%;
+						max-width: unset;
+					}
+				}
+				.username{
+					display: flex;
+					align-items: center;
+					overflow: hidden;
+				}
+			}
+			.more-action{
+				background: rgba(255,255,255,0.5);
+			}
+		}
+	}
+	.element-photo{
+		height: 22vw;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		overflow: hidden;
+		img{
+			height: 100%;
+			max-width: unset;
+		}
+	}
+	.slisde-blog-list-mini{
+		width: 125%;
+		.thumb-slide{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 70px;
+			width: 100%;
+			overflow: hidden;
+			img{
+				width: 100%;
+				max-height: unset;
+			}
+		}
+	}
+	.st-name{
+		display: flex;
+		align-items: center;
+		h2{
+			flex: 1;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+	}
+}

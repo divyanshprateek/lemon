@@ -1,0 +1,25 @@
+
+
+<ion-header class="parallax-obj parallax-translate-obj header-transparent">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="" icon="ios-arrow-round-back"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Category</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen common-parallax [scrollEvents]="true">
+  <ion-spinner class="indicator mg-auto block" [ngClass]="spnState"></ion-spinner>
+    <ion-card *ngFor="let item of data"  class="bdra-5 card card-md" [routerLink]="['/tabs/tab-home/wordpress-posts', item]">
+      <ion-card-header class="fs-13 fw-600 uppercase card-header card-header-md" [innerHTML]="item.name"></ion-card-header>
+      <ion-card-content class="card-content card-content-md">
+        <p class="text-grey-4 fs-13" [innerHTML]="item.description"></p>
+      </ion-card-content>
+  </ion-card>
+
+  <ion-infinite-scroll (ionInfinite)="loadMore($event)">
+  <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+</ion-content>

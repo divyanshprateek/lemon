@@ -1,0 +1,53 @@
+
+
+<ion-header class="parallax-obj parallax-translate-obj header-transparent">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="" icon="ios-arrow-round-back"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/tabs/tab-home/youtube-favorite']">
+        <ion-icon name="heart"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{page_name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content fullscreen common-parallax [scrollEvents]="true">
+<ion-spinner class="indicator mg-auto block" [ngClass]="spnState"></ion-spinner>
+ <ion-card *ngFor="let item of data" class="bdra-5 card card-md">
+    <img [src]="item.snippet.thumbnails.medium.url" [routerLink]="['/tabs/tab-home/youtube-detail', {url: item.snippet.thumbnails.high.url, videoId: item.id.videoId, title: item.snippet.title, publishedAt: item.snippet.publishedAt, description: item.snippet.description}]">
+    <ion-card-content class="card-content card-content-md" [routerLink]="['/tabs/tab-home/youtube-detail', {url: item.snippet.thumbnails.high.url, videoId: item.id.videoId, title: item.snippet.title, publishedAt: item.snippet.publishedAt, description: item.snippet.description}]">
+      <ion-card-title class="fs-18 card-title card-title-md" [innerHTML]="item.snippet.title"></ion-card-title>
+      <p class="text-grey fs-12">{{item.snippet.publishedAt | timeAgoIso_8061}}</p>
+    </ion-card-content>
+
+    <ion-row class="row">
+      <ion-col>
+        <ion-button fill="clear" size="small" class="text-black favorite" (click)="ytService.doFavorite(item)">
+          <ion-icon  [name]="item.isFavorite == true ? 'heart' : 'heart-empty'"></ion-icon>
+        </ion-button>
+      </ion-col>
+
+      <ion-col center text-center>
+         <ion-button fill="clear" size="small" class="text-black" (click)="ytService.doShare(item)">
+             <ion-icon name="share"></ion-icon>
+        </ion-button>
+      </ion-col>
+
+      <ion-col right text-right>
+        <ion-button fill="clear" size="small" class="text-black" (click)="ytService.doOpen(item)">
+          <ion-icon name="open"></ion-icon>
+        </ion-button>
+      </ion-col>
+      
+    </ion-row>
+  </ion-card>
+
+
+  <ion-infinite-scroll (ionInfinite)="loadMore($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>
